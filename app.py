@@ -133,7 +133,8 @@ recorded_file = st.audio_input("Record engine audio")
 audio_file = recorded_file if recorded_file is not None else uploaded_file
 
 if audio_file is not None:
-    st.audio(audio_file, format="audio/mpeg" if uploaded_file.name.lower().endswith(".mp3") else "audio/wav")
+    
+    st.audio(audio_file) 
 
     if st.button("Analyze Engine Audio", type="primary"):
         with st.spinner("Analyzing audio..."):
